@@ -32,9 +32,9 @@ jobs:
       - name: Install uv
         run: pip install uv
       - name: Install dependencies
-        run: uv pip install --system -r docs-requirements.txt
+        run: uv sync
       - name: Build with MkDocs
-        run: mkdocs build
+        run: uv run mkdocs build
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact

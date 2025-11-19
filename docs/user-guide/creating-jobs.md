@@ -2,6 +2,11 @@
 
 Create and configure text recognition jobs. A _job_ is a task that processes your input files (images or PDFs) to recognize text. Each job processes one set of input files and produces results you can review and export.
 
+<figure style="margin-bottom: 0;">
+  <img src="/resources/screens/home.png" alt="Home View" style="border: 1px solid #ccc;">
+  <figcaption style="text-align: center; font-style: italic; color: #666; margin-top: 0.5em; margin-bottom: 0;">Home view for creating new text recognition jobs</figcaption>
+</figure>
+
 ## Start a Job
 
 1. Go to Home view
@@ -20,7 +25,9 @@ Create and configure text recognition jobs. A _job_ is a task that processes you
 Descriptive name to identify the job (defaults to current time and date)
 
 ### Language
+
 Select for spell checking:
+
 - **German (DE)**
 - **English (EN)**
 - **Dutch (NL)**
@@ -35,6 +42,7 @@ Unknown words will be highlighted in the Review interface.
 If enabled, this option will try to detect a binding seam within each image and split it accordingly. Your input files must be consistent, i.e. all pages in the job's input have to be double page scans if this option is enabled.
 
 The automatic splitting may fail if:
+
 - The binding seam is not clearly visible
 - The page contains vertical lines or other patterns that could resemble a binding seam
 

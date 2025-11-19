@@ -1,0 +1,30 @@
+/* Apply custom color to header and navbar */
+.md-header {
+  background-color: #11344f !important;
+}
+
+.md-tabs {
+  background-color: #11344f !important;
+}
+
+/* Mobile / drawer navigation header */
+.md-sidebar--primary .md-nav__title,
+.md-sidebar--primary .md-sidebar__title {
+  background-color: #11344f !important;
+  color: #fff !important;
+}
+
+[data-md-color-scheme="slate"] .md-header {
+  background-color: #11344f !important;
+}
+
+[data-md-color-scheme="slate"] .md-tabs {
+  background-color: #11344f !important;
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__title,
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-sidebar__title {
+  background-color: #11344f !important;
+  color: #fff !important;
+}
+

@@ -19,7 +19,7 @@ Input → YOLO (regions/lines) → TrOCR → Recognized text
 
 ## Models
 
-### kosmos-2.5
+### Kosmos-2.5
 - https://huggingface.co/microsoft/kosmos-2.5 commit `ec3c8051b697166514a31d646cfa36d6ef4c93d7`
 - Location: `resources/models/kosmos-2.5/`
 - Size: ~5GB
@@ -113,6 +113,7 @@ There is currently no integrity checking of the files themselves.
 ## Model Updates
 
 To update:
+
 1. Backup current models
 2. Download new versions
 3. Replace files

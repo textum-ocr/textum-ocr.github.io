@@ -9,12 +9,14 @@ Build Textum into a standalone executable using Nuitka. Includes Python runtime,
 ## Prerequisites
 
 **Linux**:
+
 - Python 3.13
 - GCC compiler
 - 16GB+ RAM
 - ~20GB disk space
 
 **Windows**:
+
 - Python 3.12.10
 - 16GB+ RAM (more than 16GB strongly recommended - past builds have failed with 16GB)
 - ~20GB disk space
@@ -33,7 +35,7 @@ pip install -r requirements.txt
 
 # download models (see Models section above)
 
-# recommeded: install ccache
+# recommended: install ccache
 sudo apt install ccache
 
 # build
@@ -44,6 +46,7 @@ bash build.sh
 ```
 
 ### What build.sh does:
+
 - Uses Nuitka to compile Python to standalone executable
 - Requires torch_shm_manager binary from torch package
 - Excludes unused transformers models via `--nofollow-import-to` flags
@@ -84,6 +87,7 @@ If building still fails, try installing the `C/C++` development module from Visu
 ```
 
 ### What the build does:
+
 - Uses Nuitka with mingw64 compiler (gcc for windows)
 - Prompts for version confirmation before build
 - Generates `dist/textum.dist/` folder
@@ -97,6 +101,7 @@ If building still fails, try installing the `C/C++` development module from Visu
 ### Customization
 
 You can modify the build scripts to change:
+
 - Output location
 - Archive format
 - Module exclusions (via `--nofollow-import-to` flags)
@@ -115,6 +120,7 @@ You can modify the build scripts to change:
 ## Troubleshooting
 
 ### Build Fails
+
 - Ensure 16GB+ RAM (builds have failed with less)
 - Check disk space (~20GB needed)
 - Verify compiler available (GCC on Linux, mingw64 via Nuitka on Windows)
@@ -122,17 +128,20 @@ You can modify the build scripts to change:
 - Try clean build: remove `dist/` folder and rebuild
 
 ### "No Space Left on Device" (Linux)
+
 - Check tmpfs usage: `df -h /tmp`
 - Nuitka makes extensive use of `/tmp` during compilation
 - Increase tmpfs capacity or clean up temporary files
 
 ### Windows Defender Issues
+
 - Add build directory to Windows Defender exclusions
 - Temporarily disable real-time scanning during build
 - Check temp directory permissions
 - If errors persist, check Windows Defender quarantine logs
 
 ### Scons Backend Compilation Failed
+
 - This usually occurs on Windows
 - System memory may not be sufficient (usually needs 16GB+)
 - Windows Defender may have deleted intermediate build files during automated scan
@@ -140,6 +149,7 @@ You can modify the build scripts to change:
 - Solution: Add temp directory to exclusions and rebuild
 
 ### Long Build Times
+
 - Normal behavior - can take several hours
 - Use ccache for faster rebuilds (should auto-install on Windows)
 - Linux: `sudo apt install ccache`
@@ -150,11 +160,13 @@ You can modify the build scripts to change:
 Models are bundled in the build. The `resources/models/` directory is included with the executable.
 
 **For distribution**:
+
 - Package the entire `dist/textum.dist/` folder as an archive
 - Linux: tar.gz format
 - Windows: zip format
 
 **For users**:
+
 - Extract the archive
 - Run the executable **from the extracted folder**
 

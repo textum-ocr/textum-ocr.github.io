@@ -61,6 +61,7 @@ User Input → Job Creation → Database → Worker Thread
 ## Concurrency
 
 **Threads**:
+
 - Main - UI and event loop
 - Workers - Job processing (one per job)
 - Model - Handled by PyTorch

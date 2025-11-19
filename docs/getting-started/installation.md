@@ -9,6 +9,7 @@ We will set up public hosting in the future. For now, contact us through the app
 The downloaded archive file contains all required files for running the application. **Textum does not require an internet connection and sends no data to external services**.
 
 **System Requirements**:
+
 - CUDA-capable GPU (recommended for bigger workloads)
 - 8GB RAM minimum, 16GB recommended
 - ~20GB disk space
@@ -17,6 +18,7 @@ The downloaded archive file contains all required files for running the applicat
 Extract the archive and run the executable. See [Quick Start](quick-start.md) to begin.
 
 Note that the executable has to be run from inside the folder, otherwise it cannot find its application files. Creating a desktop shortcut is possible though:
+
 - In the extracted folder, right-click on textum.exe
 - Select `Send to > Desktop (create shortcut)`
 - This will create a desktop shortcut, allowing you to start the application from the desktop

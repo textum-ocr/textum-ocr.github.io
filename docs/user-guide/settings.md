@@ -2,6 +2,11 @@
 
 Configure Textum through the Settings view.
 
+<figure style="margin-bottom: 0;">
+  <img src="/resources/screens/settings.png" alt="Settings View" style="border: 1px solid #ccc;">
+  <figcaption style="text-align: center; font-style: italic; color: #666; margin-top: 0.5em; margin-bottom: 0;">Settings view for configuring application preferences</figcaption>
+</figure>
+
 ## General
 
 ### Auto-Start Jobs
@@ -25,6 +30,7 @@ Directory for job data, outputs, and logs. Usually you don't need to change this
 **Change**: Browse to select new location
 
 Default locations are:
+
 - **Linux**: `~/.cache/textum-data/`
 - **Windows**: `%LOCALAPPDATA%/textum-data/`
 

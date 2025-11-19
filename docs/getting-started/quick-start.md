@@ -9,15 +9,18 @@ Run the Textum executable from the extracted folder (see [Installation](installa
 ## Create a Job
 
 1. **Choose job type**
+
    - Printed Text - Kosmos-2.5 for printed documents
    - Handwritten Text - TrOCR for handwritten documents
 
 2. **Select input**
+
    - Single image (PNG, JPG, TIFF, etc.)
    - PDF document (processes all pages)
    - Folder of images
 
 3. **Configure settings**
+
    - Job name
    - Language (German, English, Dutch), used for detecting possibly unknown words
    - Double pages (for book scans)

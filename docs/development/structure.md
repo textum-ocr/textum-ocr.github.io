@@ -35,7 +35,9 @@ Overview of Textum's code organization.
 - `sfx/` - Notification sound effects
 
 ### scripts/
+
 Development and debugging utilities:
+
 - `block-imports.py` - Runs Python scripts with blocked module imports for dependency testing (used to evaluate which Nuitka Python module excludes work)
 - `blocklist.conf` - Configuration file for module import blocklist
 - `debug_htr.py` - Debug full HTR pipeline with visualization and detailed logging

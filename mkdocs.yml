@@ -1,24 +1,14 @@
 site_name: Textum Documentation
 site_description: Documentation for Textum - handwritten and printed text recognition application
 site_url: https://textum-ocr.github.io
-repo_url: https://github.com/textum-ocr/textum-ocr.github.io
-repo_name: textum-ocr/textum-ocr.github.io
+
+extra_css:
+  - resources/extra.css
 
 theme:
   name: material
-  palette:
-    - scheme: default
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    - scheme: slate
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
+  favicon: resources/favicon.png
+  logo: resources/favicon.png
   features:
     - navigation.tabs
     - navigation.sections
@@ -27,8 +17,6 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.annotate
-  icon:
-    repo: fontawesome/brands/github
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -70,6 +58,3 @@ nav:
 
 plugins:
   - search
-  - git-revision-date-localized:
-      enable_creation_date: true
-

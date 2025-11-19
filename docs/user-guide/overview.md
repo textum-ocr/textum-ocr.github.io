@@ -36,6 +36,7 @@ Configure auto-start, notifications, concurrent jobs, working directory, and pre
 ## Languages
 
 Spell checking support:
+
 - German (DE)
 - English (EN)
 - Dutch (NL)
