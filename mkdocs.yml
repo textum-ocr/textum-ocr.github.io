@@ -1,0 +1,75 @@
+site_name: Textum Documentation
+site_description: Documentation for Textum - handwritten and printed text recognition application
+site_url: https://textum-ocr.github.io
+repo_url: https://github.com/textum-ocr/textum-ocr.github.io
+repo_name: textum-ocr/textum-ocr.github.io
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.annotate
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Quick Start: getting-started/quick-start.md
+  - User Guide:
+    - Overview: user-guide/overview.md
+    - Creating Jobs: user-guide/creating-jobs.md
+    - Job Control: user-guide/job-control.md
+    - Review Interface: user-guide/review-interface.md
+    - Settings: user-guide/settings.md
+    - Export Options: user-guide/export-options.md
+  - Troubleshooting: troubleshooting.md
+  - For Developers:
+    - Machine Learning Models: development/model.md
+    - Building from Source: development/building.md
+    - Project Structure: development/structure.md
+    - Architecture: development/architecture.md
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      enable_creation_date: true
+
