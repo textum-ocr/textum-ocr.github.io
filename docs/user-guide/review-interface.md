@@ -67,7 +67,7 @@ The quick brown fox jumps over the lazy dog.
 <strong>Visual example:</strong> The word <mark style="background-color: #ffeb3b;">foxx</mark> would appear highlighted in yellow in the interface. After correcting it to "fox" and removing the <code>==</code> markers, the highlighting disappears.
 </div>
 
-Because the highlighting is implemented in text text editor itself, you can also create your own highlightings! Just enclosed any word you are not sure of in equal signs: `==check this later==`. This is particularly useful if you need to do later research about a historical term, for example.
+Because the highlighting is implemented in text text editor itself, you can also create your own highlightings! Just enclose any word you are not sure of in equal signs: `==check this later==`. This is particularly useful if you need to do later research about a historical term, for example.
 
 ## Workflow
 
