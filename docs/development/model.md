@@ -12,11 +12,6 @@ Input → Kosmos-2.5 → Recognized text
 **Handwritten Text**:  
 Input → YOLO (regions/lines) → TrOCR → Recognized text
 
-## GPU Requirements
-
-- **GPU Memory**: 4-6GB (Kosmos), 2-3GB (TrOCR), 1GB (YOLO)
-- **Recommended**: CUDA GPU with 8GB+ VRAM, 16GB+ for concurrent jobs
-
 ## Models
 
 ### Kosmos-2.5
