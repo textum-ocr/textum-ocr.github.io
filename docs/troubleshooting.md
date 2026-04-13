@@ -36,11 +36,11 @@ Common issues and possible solutions.
 - Check system requirements (RAM, disk)
 
 ### Slow Application start
-- If you're hardware is older you may experience a long application start
+- If your hardware is older you may experience a long application start
 
 ### Jobs Fail to Start
 
-- Check input files exist and accessible
+- Check input files exist and are accessible
 - Verify file permissions
 - Check disk space
 - Ensure models loaded
@@ -53,7 +53,7 @@ Common issues and possible solutions.
 - Verify correct job type (printed vs handwritten)
 - Ensure correct language selected
 - Try preprocessing images
-- Check model files complete
+- Check that model files are complete
 - However, it may just be that the recognition methods currently implemented in Textum are not fit for your specific document style
 
 ### Out of Memory
@@ -78,11 +78,11 @@ Common issues and possible solutions.
 
 ### Slow Processing
 
-- Check GPU being used (not CPU)
+- Check GPU being used (not CPU) in the application log (can be opened form Settings)
 - Verify CUDA working
 - Reduce image resolution if very large
 - Process fewer pages at once
-- Ensure models loaded (not reloading)
+- Ensure models loaded properly
 - Check system resources
 
 ### High Memory Usage
@@ -90,8 +90,8 @@ Common issues and possible solutions.
 - Reduce concurrent jobs
 - Process smaller batches
 - Close other applications
-- Restart app periodically
-- Monitor memory usage
+- Restart app
+- Monitor memory usage in task manager
 
 ## Export Issues
 
@@ -100,18 +100,19 @@ Common issues and possible solutions.
 - Check disk space
 - Verify write permissions
 - Ensure job completed
-- Check file path length
+- Check file path length and restrictions (Windows)
 - Try different format
 - Review log
 
 ## Application Logs
 
-**Location**: Working directory/log.txt
+Can be opened from the Settings.
+
+**Location**: `<working directory>/log.txt`
 
 Check logs for:
 
 - Error messages
-- Timestamps
 - Specific error codes
 - Stack traces
 
@@ -119,18 +120,16 @@ Check logs for:
 
 When reporting issues, include:
 
-- OS and version
-- Python version
+- Operating system and version
+- Python version, if running from dev environment
 - GPU model and drivers
 - Textum version
-- Error messages from logs
+- Relevant log file output
 - Steps to reproduce
 
 ## Quick Fixes
 
 - **Restart Application** - Fixes many temporary issues
 - **Check Logs** - Provides specific error details
-- **Verify Models** - Ensure all present and correct
+- **Verify Models** - Ensure all are present and complete
 - **Check Resources** - RAM, disk space, GPU memory
-- **Update Dependencies** - Ensure latest versions
-- **Clean Install** - Remove and reinstall if needed
