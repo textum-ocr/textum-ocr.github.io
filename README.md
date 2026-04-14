@@ -2,6 +2,8 @@
 
 This repository contains the documentation for Textum, built with MkDocs.
 
+NOTE: The source code for the Textum application itself can be found here: https://git.informatik.uni-leipzig.de/textum/app
+
 ## Serving Locally
 
 ```bash
