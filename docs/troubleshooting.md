@@ -10,7 +10,7 @@ Common issues and possible solutions.
 ## Installation Issues
 
 ### Models Not Detected
-**For users**: Models should be bundled with the application. If missing, re-download the application.
+**For users**: Models should be bundled with the application. If missing, re-download the application or ask your admin.
 
 **For developers**:
 
@@ -79,7 +79,7 @@ Common issues and possible solutions.
 ### Slow Processing
 
 - Check GPU being used (not CPU) in the application log (can be opened form Settings)
-- Verify CUDA working
+- Verify if CUDA working
 - Reduce image resolution if very large
 - Process fewer pages at once
 - Ensure models loaded properly
