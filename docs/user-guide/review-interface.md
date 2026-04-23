@@ -11,13 +11,13 @@ Verify and correct recognized text in the side-by-side review interface.
 
 1. Go to [Job Control](job-control.md) view
 3. Click the `Review` button on a job
-4. Interface opens in new window
+4. Interface opens in a new window
 
 ## Layout
 
 - **Left** - Recognized text (editable)
-- **Right** - Original image with detected text boxes (so-called _bounding box_)
-- **Navigation** - Arrow keys or buttons to move between pages
+- **Right** - Original image with the corresponding text line enclosed in a red box (_bounding box_)
+- **Navigation** - Arrow buttons (top-left) to move between pages
 
 ## Editing (Left)
 
@@ -25,7 +25,7 @@ Verify and correct recognized text in the side-by-side review interface.
 2. Modify text
 3. Save your changes using the `Save` button
 
-The current line will be highlighted in the original image as a red box. You can turn off this behaviour using the `Show bounding boxes` switch.
+The current line will be highlighted in the original image as a red box. You can turn off this behaviour by toggling the `Show bounding boxes` switch.
 
 The editing view preserves the original document's line breaks exactly as they appear in the source image. This means if a word was split across lines in the original document, it will remain split in the recognized text.
 
@@ -36,7 +36,7 @@ er the lazy dog.
 ```
 The word "over" appears split across two lines (`ov-` and `er`) because that's how it appeared in the original document. Textum preserves this formatting to match the original layout.
 
-**Note**: No automatic merging of lines or words is performed. You can manually edit the text to combine split words or adjust line breaks if needed.
+**Note**: Currently no automatic merging of lines or words is performed. You can manually edit the text to combine split words or adjust line breaks if needed.
 
 ## Image view (Right)
 
@@ -67,7 +67,7 @@ The quick brown fox jumps over the lazy dog.
 <strong>Visual example:</strong> The word <mark style="background-color: #ffeb3b;">foxx</mark> would appear highlighted in yellow in the interface. After correcting it to "fox" and removing the <code>==</code> markers, the highlighting disappears.
 </div>
 
-Because the highlighting is implemented in text text editor itself, you can also create your own highlightings! Just enclose any word you are not sure of in equal signs: `==check this later==`. This is particularly useful if you need to do later research about a historical term, for example.
+Because the highlighting is implemented in text text editor itself, you can also create your own highlightings! Just enclose any word you are not sure of in equal signs: <code>==<mark style="background-color: #ffeb3b;">check this later</mark>==</code>. This is particularly useful if you need to do later research about a historical term, for example.
 
 ## Workflow
 

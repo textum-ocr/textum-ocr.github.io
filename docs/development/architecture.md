@@ -1,81 +1,45 @@
 # Architecture
 
-System design and architecture overview.
-
 ## Technology Stack
 
 - **PySide6** - Cross-platform GUI
+- **qfluentwidgets** - Modern Qt Theming Framework
 - **Transformers** - Model loading and inference
-- **PyTorch** - Deep learning backend
-- **SQLAlchemy** - Database persistence
-- **Nuitka** - Python to executable compilation
+- **Ultralytics / YOLOv9** – Region and line segmentation
+- **PyMuPDF (fitz)** – PDF rasterization
+- **OpenCV / scikit-image / Pillow** – Image preprocessing
+- **python-docx / Qt PDF** – Export to DOCX and PDF
+- **SQLAlchemy / SQLite** - Job Database
+- **Nuitka** – Compilation to native standalone executable
 
-## Application Flow
+## Recognition Pipeline
 
-1. **Startup** - Load settings, configure logging, initialize database
-2. **Model Loading** - On-demand with GPU memory management
-3. **UI** - Main window with views, event handling
-4. **Event Loop** - User interactions, job processing, UI updates
+<figure style="margin-bottom: 0;">
+  <img src="/resources/screens/pipeline-arch.png" alt="Pipeline architecture diagram" style="border: 1px solid #ccc;">
+  <figcaption style="text-align: center; font-style: italic; color: #666; margin-top: 0.5em; margin-bottom: 0;">Textum OCR/HTR processing pipeline architecture</figcaption>
+</figure>
 
-## Job Processing
+## Internal Data Representation
 
+- Jobs and their statuses are saved in an SQLite database.
+- Each job's content is saved as a JSON file in the working directory, including the recognized text with bounding boxes.
+- Both the handwritten and printed pipeline produce the same JSON format, to make post-processing easier.
+- The processed images are also saved in the working directory.
+
+### Job JSON Representation
+```json
+[
+  {
+    "page_id": "x" | "x.1" | "x.2",
+    "text": ["line 1", "line 2", ...],
+    "with_regions": [
+      {"text": "line 1", "bbox": [x0, y0, x1, y1]},
+      {"text": "line 2", "bbox": [x0, y0, x1, y1]},
+      ...
+    ],
+    "image_path": "<working dir>/processed_images/<job_i>/PAGE1.jpg",
+    "error": null | "error string"
+  },
+  ...
+]
 ```
-User Input → Job Creation → Database → Worker Thread
-                                            ↓
-                                      Preprocessing
-                                            ↓
-                                       Recognition
-                                            ↓
-                                     Postprocessing
-                                            ↓
-                                    Results Storage
-                                            ↓
-                                   Review Interface
-                                            ↓
-                                         Export
-```
-
-## Components
-
-### Controllers
-- **JobController** - Manages job lifecycle, worker threads, status, concurrency
-- **ExportController** - Format conversion, file generation
-
-### Models
-- **JobDB** - SQLAlchemy persistence, status tracking
-- **Settings** - Configuration storage, user preferences
-
-### Recognition Modules
-- **Kosmos** - Printed text recognition, layout understanding
-- **TrOCR** - Handwritten text recognition
-- **YOLO** - Region and line segmentation (for handwritten)
-- **Preprocessing** - Image enhancement
-- **Postprocessing** - Spell checking, corrections
-
-### Views
-- **HomeView** - Job creation
-- **JobControlView** - Job management
-- **ReviewView** - Text editing
-- **SettingsView** - Configuration
-
-## Concurrency
-
-**Threads**:
-
-- Main - UI and event loop
-- Workers - Job processing (one per job)
-- Model - Handled by PyTorch
-
-**Synchronization**: SQLAlchemy for database, Qt signals/slots for UI, thread-safe model loading
-
-## Memory Management
-
-- Models loaded on-demand, cached, cleaned up on exit
-- Job data in database, loaded as needed
-- GPU memory carefully managed
-
-## Error Handling
-
-- Errors caught in workers, status updated, user notified, logs recorded
-- Graceful degradation for model errors
-

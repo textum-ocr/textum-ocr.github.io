@@ -1,14 +1,12 @@
 # Job Control
 
-Monitor and manage all your text recognition jobs in the Job Control view.
-
 ## Overview
 
 The Job Control view displays all jobs with their current status, allowing you to:
 
 - Monitor job progress
-- Start and stop jobs manually
-- Access complete jobs for review
+- Start and stop jobs
+- Start reviewing completed jobs
 - Export results
 - Manage the job queue
 
@@ -70,20 +68,18 @@ Stop a running job:
 - Job state changes to Cancelled
 
 ### Review
-Open the Review interface for completed jobs:
+Open the [Review Interface](review-interface.md) for completed jobs:
 
 - Click `Review` on a complete job
 - Opens side-by-side review interface
 - Make corrections and verify recognized text
-- See [Review Interface](review-interface.md) for details
 
 ### Export
-Export results directly from Job Control:
+[Export](export-options.md) results directly from Job Control:
 
 - Click `Export` on a complete job
 - Choose format and destination
 - Exports all pages with corrections
-- See [Export Options](export-options.md) for details
 
 ## Monitoring Progress
 
@@ -102,7 +98,7 @@ While jobs are running:
 - **Monitor resources** - Running multiple jobs simultaneously uses more system resources and may slow down your PC
 - **Check failed jobs** - Review application log for error details
 
-## Related
+## ▶️ Related
 
 - [Creating Jobs](creating-jobs.md) - How to create new jobs
 - [Review Interface](review-interface.md) - Reviewing and correcting results

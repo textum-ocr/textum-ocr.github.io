@@ -46,6 +46,7 @@ nav:
   - Getting Started:
     - Installation: getting-started/installation.md
     - Quick Start: getting-started/quick-start.md
+    - Gallery: getting-started/gallery.md
   - User Guide:
     - Overview: user-guide/overview.md
     - Creating Jobs: user-guide/creating-jobs.md
@@ -55,10 +56,10 @@ nav:
     - Export Options: user-guide/export-options.md
   - Troubleshooting: troubleshooting.md
   - For Developers:
-    - Machine Learning Models: development/model.md
+    - Machine Learning Models: development/models.md
     - Building from Source: development/building.md
-    - Project Structure: development/structure.md
     - Architecture: development/architecture.md
+    - Tips and Tricks: development/tricks.md
 
 plugins:
   - search

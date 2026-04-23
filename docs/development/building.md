@@ -1,10 +1,10 @@
 # Building from Source
 
-Build Textum into a standalone executable using Nuitka. Includes Python runtime, CUDA 12.8 runtime, dependencies, and application code.
+Build Textum into a standalone executable using [Nuitka](https://nuitka.net). Includes Python runtime, CUDA 12.8 runtime, dependencies, and application code.
 
 **Build Time**: Several hours due to complex dependencies (torch, transformers). Nuitka compiles Python to C then to native machine code.
 
-**Note**: Installing ccache can help with build time (Nuitka should install ccache automatically on Windows. On Linux, use your package manager)
+**Note**: Installing [ccache](https://ccache.dev/) can help with build time (Nuitka should install ccache automatically on Windows. On Linux, use your package manager)
 
 ## Prerequisites
 
@@ -23,43 +23,50 @@ Build Textum into a standalone executable using Nuitka. Includes Python runtime,
 
 ## Models
 
-Before building, you need to download the required machine learning models (~7GB total). See [Machine Learning Models](model.md) for download instructions.
+The model weights are included in the git lfs repo, no separate download is necessary.
 
-## Linux Build
+## Linux: Running in Dev env and Building
 
 ```bash
-# setup
+# --- setup ---
+# in the past we had problems with uv and nuitka, that's why we are using vanilla venvs
 python -m venv .venv-linux
 source .venv-linux/bin/activate
 pip install -r requirements.txt
 
-# download models (see Models section above)
+# --- running the app in dev env ---
+python textum.py 
 
-# recommended: install ccache
+# --- building ---
+# recommended: install ccache (example for ubuntu)
 sudo apt install ccache
 
 # build
 bash build.sh
 
-# verify
+# run the binary
 ./dist/textum.dist/textum
 ```
 
 ### What build.sh does:
 
 - Uses Nuitka to compile Python to standalone executable
-- Requires torch_shm_manager binary from torch package
-- Excludes unused transformers models via `--nofollow-import-to` flags
+- Ensures `torch_shm_manager` binary from torch package is included in final binary (past build issues)
+- Excludes unused python modules via `--nofollow-import-to` flags
 - Generates `dist/textum.dist/` folder with executable and dependencies
 - Creates `dist/textum-dist-linux.tar.gz` archive
 
-## Windows Build
+## Windows: Running in Dev env and Building
 
 ### Install Python 3.12.10
 
+Python 3.13 had some issues on Windows and 3.14 is not tested at all. Stay on the 3.12.x branch for now.
+
+Via powershell:
+
 ```powershell
 Invoke-WebRequest -Uri "https://www.python.org/ftp/python/3.12.10/python-3.12.10-amd64.exe" -OutFile "python-installer.exe"
-# this command may conflict with existing python installations
+# this command may conflict with existing python installations!
 Start-Process -FilePath .\python-installer.exe -ArgumentList "/quiet InstallAllUsers=1 PrependPath=1" -NoNewWindow -Wait
 ```
 
@@ -77,7 +84,8 @@ If building still fails, try installing the `C/C++` development module from Visu
 # setup venv and install dependencies
 .\build_and_run.ps1 -Install
 
-# download models (see Models section above)
+# run textum from the dev environment
+.\build_and_run.ps1 -Run
 
 # build executable
 .\build_and_run.ps1 -Build
@@ -107,25 +115,16 @@ You can modify the build scripts to change:
 - Module exclusions (via `--nofollow-import-to` flags)
 - Nuitka optimization flags
 
-## Development Workflow
-
-1. Make code changes
-2. Test in dev mode:
-   - Linux: `python textum.py`
-   - Windows: `.\build_and_run.ps1 -Run`
-3. Build executable
-4. Test executable from `dist/textum.dist/`
-5. Distribute if working
-
 ## Troubleshooting
 
 ### Build Fails
 
-- Ensure 16GB+ RAM (builds have failed with less)
+- Ensure 16GB+ RAM (Windows builds have failed with less)
 - Check disk space (~20GB needed)
 - Verify compiler available (GCC on Linux, mingw64 via Nuitka on Windows)
 - Review build logs for specific errors
 - Try clean build: remove `dist/` folder and rebuild
+- Check nuitka's github issues page
 
 ### "No Space Left on Device" (Linux)
 
@@ -145,15 +144,14 @@ You can modify the build scripts to change:
 - This usually occurs on Windows
 - System memory may not be sufficient (usually needs 16GB+)
 - Windows Defender may have deleted intermediate build files during automated scan
-- Check `...\AppData\Local\Temp\1` for missing files
-- Solution: Add temp directory to exclusions and rebuild
+- Check `...\AppData\Local\Temp\1` for missing files (Scons stores intermediate assembly files here and Windows Defender doesn't like that)
+- Possible Solution: Add that temp directory to exclusions and rebuild
 
 ### Long Build Times
 
 - Normal behavior - can take several hours
-- Use ccache for faster rebuilds (should auto-install on Windows)
-- Linux: `sudo apt install ccache`
-- Subsequent builds will be faster
+- Use ccache for faster rebuilds (Windows: should auto-install, Linux: use your package manager)
+- Subsequent builds should be faster
 
 ## Distribution
 
@@ -161,7 +159,7 @@ Models are bundled in the build. The `resources/models/` directory is included w
 
 **For distribution**:
 
-- Package the entire `dist/textum.dist/` folder as an archive
+- Package the entire `dist/textum.dist/` folder as an archive. This is automatically done by both build scripts.
 - Linux: tar.gz format
 - Windows: zip format
 
@@ -169,7 +167,3 @@ Models are bundled in the build. The `resources/models/` directory is included w
 
 - Extract the archive
 - Run the executable **from the extracted folder**
-
-## Note on uv
-
-Use standard `python -m venv` instead of uv. Nuitka works best with standard virtual environments (there were some issues with nuitka + uv in the past).

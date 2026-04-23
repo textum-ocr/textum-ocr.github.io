@@ -1,6 +1,6 @@
 # Export Options
 
-Export recognized text in multiple formats from the Review Interface or Job Control.
+Export recognized text in multiple formats from the [Review Interface](review-interface.md) or [Job Control](job-control.md).
 
 <div style="display: flex; gap: 1em; flex-wrap: wrap; margin: 1em 0;">
   <figure style="flex: 0 0 30%; margin: 0;">
@@ -32,7 +32,7 @@ Export recognized text in multiple formats from the Review Interface or Job Cont
 
 ## Export Process
 
-1. Click Export button. Select if only current page (available from Review) or all pages (available from Review and Job Control View) should be exported.
+1. Click the `Export` button. Select if only the current page (available from Review) or all pages (available from Review and Job Control View) should be exported.
 2. Choose format: Plain Text, DOCX, or PDF
 3. If you selected a language during job creation, unknown words were highlighted using word lists. Per default, highlight markers (`==this text will be highlighted==`) are not exported.
 4. Select destination

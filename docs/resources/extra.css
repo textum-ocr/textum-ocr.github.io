@@ -28,3 +28,9 @@
   color: #fff !important;
 }
 
+/* Underline all content links */
+.md-content a,
+.md-content a:visited {
+  text-decoration: underline;
+}
+

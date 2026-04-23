@@ -12,29 +12,33 @@ hide:
 
 Textum is a desktop application for handwritten and printed text recognition. It contains a sophisticated review interface and handles all steps of the workflow: from input files, to text recognition, manual review and exporting to various formats. Textum works fully offline and doesn't send any data to external services. The application is provided free of charge.
 
+🛠️ The Source Code can be found here: [git.informatik.uni-leipzig.de/textum/app](https://git.informatik.uni-leipzig.de/textum/app).
+
+🖼️ If you want to see more of the interface, visit the [Gallery](getting-started/gallery.md).
 
 ## Features
 
+- Easy installation. Just download, extract and start working
 - Process single images, PDFs, or folders of images
-- Printed text recognition with Kosmos-2.5
-- Handwritten text recognition with TrOCR (fine-tuned on historical documents)
-- Multi-language spell checking (German, English, Dutch)
-- Interactive side-by-side review interface
-- Export to plain text, DOCX, or PDF
-- Models bundled with application (no separate downloads needed)
+- Printed text recognition with [Kosmos-2.5](https://huggingface.co/microsoft/kosmos-2.5)
+- Handwritten text recognition with [TrOCR](https://huggingface.co/microsoft/trocr-base-handwritten) (fine-tuned on holocaust diaries)
+- Models are bundled with the application, no separate downloads needed
+- Intuitive side-by-side review interface
+- Automated highlighting of likely OCR errors, via dictionaries (currently German, English, Dutch)
+- Export to plain text, DOCX, or PDF. ALTO or PAGE XML are currently not yet supported
+- Works fully offline. No data is sent anywhere.
 
-## Quick Links
+## ▶️ Next Steps
 
-- [Quick Start](getting-started/quick-start.md) - Create your first job
-- [User Guide](user-guide/overview.md) - Complete usage guide
-- [Building from Source](development/building.md) - For developers
+- 😀 Users: proceed to the [Installation](getting-started/installation.md)
+- 🛠️ Developers: See how to [build and run the app locally](development/building.md)
 
 ## System Requirements
 
-- CUDA-capable GPU (strongly recommended)
-- 8GB RAM minimum, 16GB recommended
+- CUDA-capable GPU (recommended, but not required)
+- 8GB RAM should work, but 16GB is better
 - ~20GB disk space
-- Windows 10/11 or Linux
+- Windows 10/11 or Linux. MacOS is not tested
 
 ## How It Works
 
