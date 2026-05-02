@@ -2,7 +2,7 @@
 
 This repository contains the documentation for Textum, built with MkDocs.
 
-NOTE: The source code for the Textum application itself can be found here: https://git.informatik.uni-leipzig.de/textum/app
+NOTE: The source code for the Textum application itself can be found here: https://codeberg.org/textum/app
 
 ## Emoji Coding
 

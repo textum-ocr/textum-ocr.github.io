@@ -12,7 +12,7 @@ hide:
 
 Textum is a desktop application for handwritten and printed text recognition. It contains a sophisticated review interface and handles all steps of the workflow: from input files, to text recognition, manual review and exporting to various formats. Textum works fully offline and doesn't send any data to external services. The application is provided free of charge.
 
-🛠️ The Source Code can be found here: [git.informatik.uni-leipzig.de/textum/app](https://git.informatik.uni-leipzig.de/textum/app).
+🛠️ The Source Code can be found here: [codeberg.org/textum/app](https://codeberg.org/textum/app).
 
 🖼️ If you want to see more of the interface, visit the [Gallery](getting-started/gallery.md).
 

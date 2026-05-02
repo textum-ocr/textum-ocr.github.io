@@ -1,7 +1,7 @@
 site_name: Textum Documentation
 site_description: Documentation for Textum - handwritten and printed text recognition application
-site_url: https://textum-ocr.github.io
-repo_url: https://git.informatik.uni-leipzig.de/textum/app
+site_url: https://textum.codeberg.page/
+repo_url: https://codeberg.org/textum/app
 repo_name: "View Source: textum/app"
 
 extra_css:
@@ -12,7 +12,7 @@ theme:
   favicon: resources/favicon.png
   logo: resources/favicon.png
   icon:
-    repo: fontawesome/brands/gitlab
+    repo: fontawesome/brands/git-alt
   features:
     - navigation.tabs
     - navigation.sections
