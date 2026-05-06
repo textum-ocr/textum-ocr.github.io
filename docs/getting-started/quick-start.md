@@ -15,7 +15,7 @@ Run the Textum executable from the extracted folder (see [Installation](installa
 
 1. **Choose job type**
 
-   - Printed Text - Kosmos-2.5 for printed documents
+   - Printed Text - Kosmos-2.5 for printed documents, primarily for Latin scripts
    - Handwritten Text - TrOCR for handwritten documents
 
 2. **Select input**

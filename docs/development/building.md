@@ -23,7 +23,11 @@ Build Textum into a standalone executable using [Nuitka](https://nuitka.net). In
 
 ## Models
 
-The model weights are included in the git lfs repo, no separate download is necessary.
+The model weights are not stored in the repository. Download them into `resources/` before running or building:
+
+```bash
+python scripts/fetch_models.py -p resources
+```
 
 ## Linux: Running in Dev env and Building
 
@@ -33,6 +37,9 @@ The model weights are included in the git lfs repo, no separate download is nece
 python -m venv .venv-linux
 source .venv-linux/bin/activate
 pip install -r requirements.txt
+
+# download models
+python scripts/fetch_models.py -p resources
 
 # --- running the app in dev env ---
 python textum.py 
@@ -83,6 +90,9 @@ If building still fails, try installing the `C/C++` development module from Visu
 ```powershell
 # setup venv and install dependencies
 .\build_and_run.ps1 -Install
+
+# download models
+python scripts/fetch_models.py -p resources
 
 # run textum from the dev environment
 .\build_and_run.ps1 -Run

@@ -14,6 +14,7 @@ Common issues and possible solutions.
 
 **For developers**:
 
+- Run `python scripts/fetch_models.py -p resources`
 - Verify models in `resources/models/`
 - Check directory structure matches expected layout
 - Ensure all files present (not just directories)

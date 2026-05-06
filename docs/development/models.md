@@ -2,7 +2,11 @@
 
 🛠️ **Note**: This guide is for developers only. End users get models bundled with the application.
 
-The model weights are now included in the git lfs repo, so no separate download is required for building.
+The model weights are not stored in the repository. Download them before local development or builds with:
+
+```bash
+python scripts/fetch_models.py -p resources
+```
 
 Model files are ~7GB total.
 
@@ -20,7 +24,7 @@ Input → YOLO (regions/lines) → TrOCR → Recognized text
 - <https://huggingface.co/microsoft/kosmos-2.5> commit `ec3c8051b697166514a31d646cfa36d6ef4c93d7`
 - Location: `resources/models/kosmos-2.5/`
 - Size: ~5GB
-- Used for: multimodal printed document understanding
+- Used for: multimodal printed document understanding, primarily for Latin scripts
 
 ### TrOCR
 - Custom model finetuned on 105 diary pages from concentration camps
@@ -36,8 +40,6 @@ Input → YOLO (regions/lines) → TrOCR → Recognized text
 - Location: `resources/models/yolo/`
 - Files: `yolov9-lines.pt`, `yolov9-regions.pt`
 - Size: ~120MB each
-
-Download the models from huggingface using git-lfs or the huggingface hub API.
 
 ## Directory Structure
 

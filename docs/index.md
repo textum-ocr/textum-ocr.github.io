@@ -20,7 +20,7 @@ Textum is a desktop application for handwritten and printed text recognition. It
 
 - Easy installation. Just download, extract and start working
 - Process single images, PDFs, or folders of images
-- Printed text recognition with [Kosmos-2.5](https://huggingface.co/microsoft/kosmos-2.5)
+- Printed text recognition with [Kosmos-2.5](https://huggingface.co/microsoft/kosmos-2.5), primarily for Latin scripts
 - Handwritten text recognition with [TrOCR](https://huggingface.co/microsoft/trocr-base-handwritten) (fine-tuned on holocaust diaries)
 - Models are bundled with the application, no separate downloads needed
 - Intuitive side-by-side review interface
