@@ -7,7 +7,8 @@ hide:
 
 <figure style="text-align: center; margin-bottom: 0;">
   <img src="/resources/screens/review-header.png" alt="Textum Review interface preview" style="border: 1px solid #ccc;">
-  <figcaption style="text-align: center; font-style: italic; color: #666; margin-top: 0.5em; margin-bottom: 0;">Textum Review interface preview</figcaption>
+  <figcaption style="text-align: center; font-style: italic; color: #666; margin-top: 0.5em; margin-bottom: 0; max-width: unset;">Textum review interface with a side-by-side view of the editable transcription (left) and the original document (right). Dictionary-based highlighting marks unrecognized words (yellow), while the active transcription line is simultaneously highlighted in the document image (red). The blue line numbers indicate the line numbers recognized in the image.
+</figcaption>
 </figure>
 
 Textum is a desktop application for handwritten and printed text recognition. It contains a sophisticated review interface and handles all steps of the workflow: from input files, to text recognition, manual review and exporting to various formats. Textum works fully offline and doesn't send any data to external services. The application is provided free of charge.
